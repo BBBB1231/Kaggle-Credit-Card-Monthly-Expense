@@ -1,0 +1,89 @@
+================================================================================
+ULTRA-AGGRESSIVE MODEL + PCA - GO FOR 220!
+================================================================================
+
+[1/10] Loading data...
+
+[2/10] ULTRA Feature Engineering...
+Total features: 73
+
+[3/10] Handling missing values...
+
+[4/10] Encoding categorical variables...
+
+[5/10] Feature selection (keeping top features)...
+Selected features: 73 (from 73)
+
+[6/9] Applying PCA dimension reduction...
+PCA components: 23 (explaining 95% variance)
+Final feature space: 96 (original + PCA)
+
+[7/9] Training ensemble with multiple models and seeds...
+
+Training XGBoost (seed=42)...
+  CV RMSE: 258.7315
+
+Training XGBoost (seed=123)...
+  CV RMSE: 258.9217
+
+Training XGBoost (seed=456)...
+  CV RMSE: 258.9666
+
+Training LightGBM (seed=42)...
+  CV RMSE: 255.3645
+
+Training LightGBM (seed=123)...
+  CV RMSE: 255.4407
+
+Training CatBoost (seed=42)...
+  CV RMSE: 253.1903
+
+Training CatBoost (seed=123)...
+  CV RMSE: 253.1368
+
+[8/9] Model performance summary:
+  XGB_42: 258.7315
+  XGB_123: 258.9217
+  XGB_456: 258.9666
+  LGB_42: 255.3645
+  LGB_123: 255.4407
+  CAT_42: 253.1903
+  CAT_123: 253.1368
+
+[9/9] Creating weighted ensemble...
+Model weights:
+  XGB_42: 0.1415
+  XGB_123: 0.1414
+  XGB_456: 0.1413
+  LGB_42: 0.1433
+  LGB_123: 0.1433
+  CAT_42: 0.1446
+  CAT_123: 0.1446
+
+Weighted Ensemble OOF RMSE: 254.5418
+
+[10/10] Creating final submission...
+
+================================================================================
+ULTRA MODEL COMPLETE!
+================================================================================
+Best single model RMSE: 253.1368
+Weighted ensemble RMSE: 254.5418
+
+Submission: submission_ultra.csv
+Mean: $1671.67
+Median: $1597.18
+
+First 10:
+   customer_id  monthly_spend
+0     20451981    1858.738372
+1     23251656    2734.529713
+2     64082260    1414.007745
+3     82505923    1995.382235
+4     89981994    1387.842868
+5     64973937    1230.189888
+6     27610278    2236.138762
+7     35883083    1242.685850
+8     20490020    1695.158192
+9     54517670    1342.017214
+================================================================================
