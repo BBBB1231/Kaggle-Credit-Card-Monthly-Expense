@@ -1,0 +1,41 @@
+================================================================================
+OPTIMIZED LINEAR MODELS - 5-FOLD CV + GRID/RANDOM SEARCH (NO PCA)
+================================================================================
+
+[1/7] Loading data...
+Training: (40000, 21), Test: (10000, 21)
+
+[2/7] Feature Engineering...
+Features created: 52
+
+[3/7] Preprocessing...
+Scaled feature matrix: (40000, 52)
+
+[4/7] Feature Selection with RFE...
+RFE selected: 45 features
+
+[5/7] Hyperparameter Tuning with Grid Search and Random Search...
+================================================================================
+
+--- RIDGE REGRESSION ---
+Grid Search on all scaled features...
+  Time: 3.67s
+  Best alpha: 0.1
+  Best CV RMSE: 259.4111
+Grid Search on RFE features...
+  Time: 0.57s
+  Best alpha: 0.1
+  Best CV RMSE: 259.3526
+
+--- LASSO REGRESSION ---
+Grid Search on all scaled features...
+  Time: 70.26s
+  Best alpha: 0.005
+  Best CV RMSE: 259.4158
+Grid Search on RFE features...
+  Time: 60.57s
+  Best alpha: 0.005
+  Best CV RMSE: 259.3554
+
+--- ELASTIC NET ---
+Random Search on all scaled features...
