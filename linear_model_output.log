@@ -1,0 +1,70 @@
+================================================================================
+LINEAR MODEL APPROACH - LASSO/RIDGE WITH PCA & FEATURE SELECTION
+================================================================================
+
+[1/10] Loading data...
+Training: (40000, 21), Test: (10000, 21)
+
+[2/10] Advanced Feature Engineering for Linear Models...
+Features created: 57
+
+[3/10] Handling missing values and encoding...
+Feature matrix shape: (40000, 57)
+
+[4/10] Standardizing features (critical for linear models!)...
+
+[5/10] Applying PCA for dimension reduction...
+PCA 95% variance: 7 components
+PCA 99% variance: 18 components
+
+[6/10] Stepwise feature selection (RFE with Ridge)...
+RFE selected: 40 features
+SelectKBest selected: 50 features
+
+[7/10] Setting up K-Fold Cross-Validation...
+
+[8/10] Grid Search for optimal hyperparameters...
+
+--- LASSO Regression ---
+Training LASSO on scaled features...
+  Best alpha: 0.003275
+  Train RMSE: 258.9821
+Training LASSO on PCA 95% features...
+  Best alpha: 0.000100
+  Train RMSE: 361.6013
+Training LASSO on RFE features...
+  Best alpha: 0.000100
+  Train RMSE: 259.0298
+
+--- Ridge Regression ---
+Training Ridge on scaled features...
+  Best alpha: 0.141747
+  Train RMSE: 258.9596
+Training Ridge on PCA 95% features...
+  Best alpha: 265.608778
+  Train RMSE: 361.6015
+Training Ridge on RFE features...
+  Best alpha: 0.013219
+  Train RMSE: 259.0040
+
+--- ElasticNet Regression ---
+Training ElasticNet on scaled features...
+  Best alpha: 0.001677
+  Best l1_ratio: 0.9900
+  Train RMSE: 258.9827
+Training ElasticNet on PCA 95% features...
+  Best alpha: 0.005179
+  Best l1_ratio: 0.1000
+  Train RMSE: 361.6014
+
+[9/10] Cross-validation with best models...
+
+Top 5 Models (by train RMSE):
+
+ridge_scaled (Train RMSE: 258.9596)
+  CV RMSE: 259.3685 (+/- 2.1380)
+
+lasso_scaled (Train RMSE: 258.9821)
+  CV RMSE: 259.3707 (+/- 2.1346)
+
+elastic_scaled (Train RMSE: 258.9827)
